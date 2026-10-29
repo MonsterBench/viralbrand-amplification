@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ViralBrand × Colton Lee — Paid amplification approach (discussion draft)</title>
+<meta name="description" content="A proposed paid-amplification approach for ViralBrand. Discussion draft, not agreed commercial terms.">
+<style>
+:root{
+  --ink:#101214; --ink2:#2a2e33; --muted:#555b63; --paper:#f6f4ec; --paper2:#ebe8dc; --line:#d6d2c3;
+  --lime:#c8f53c; --limeDeep:#3f5d00; --white:#fff;
+  --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--limeDeep);outline-offset:3px;border-radius:2px}
+.dark :focus-visible{outline-color:var(--lime)}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--lime);color:var(--ink);padding:10px 14px;z-index:10;font-weight:600}
+.skip:focus{left:8px}
+
+/* header + hero */
+.dark{background:var(--ink);color:#ecebe4}
+.topbar{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid #2c3036}
+.brand{font-weight:700;letter-spacing:.01em;font-size:17px}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)}
+.hero{padding:72px 0 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.6vw,76px);line-height:1.02;letter-spacing:-.02em;margin:0 0 28px}
+.hero h1 em{font-style:normal;background:var(--lime);color:var(--ink);padding:0 .12em}
+.thesis{font-size:19px;max-width:34em;color:#cfcec6;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font:inherit;font-weight:600;font-size:15px;border:1.5px solid currentColor;background:transparent;color:inherit;padding:11px 18px;cursor:pointer;border-radius:999px;min-height:44px;text-decoration:none;display:inline-flex;align-items:center}
+.btn.primary{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.btn:hover{filter:brightness(.94)}
+.flow{width:100%;height:auto}
+.flow .dash{stroke-dasharray:6 8;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+
+/* sections */
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--limeDeep);margin:0 0 14px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.015em;margin:0 0 18px;max-width:20em}
+h3{font-size:19px;line-height:1.3;margin:0 0 8px}
+.lede{font-size:19px;color:var(--ink2);max-width:40em;margin:0 0 40px}
+p{margin:0 0 14px}
+
+/* engines */
+.engines{list-style:none;margin:0 0 56px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--ink)}
+.engines li{padding:24px 22px 26px;border-right:1.5px solid var(--ink);position:relative;background:var(--paper)}
+.engines li:last-child{border-right:0}
+.engines .n{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.engines h3{font-family:var(--serif);font-weight:400;font-size:24px;margin:6px 0 8px}
+.engines p{font-size:15px;color:var(--ink2);margin:0}
+.engines li.ours{background:var(--lime)}
+.engines li.ours .n,.engines li.ours p{color:var(--ink)}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--lime);padding:3px 8px;margin-bottom:10px}
+.loopTitle{font-size:15px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+.loop{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px 0;align-items:stretch}
+.loop li{flex:1 1 150px;min-width:0;background:var(--white);border:1.5px solid var(--ink);padding:14px 14px 16px;margin-right:26px;position:relative;border-radius:4px}
+.loop li::after{content:"→";position:absolute;right:-24px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:700}
+.loop li:last-child{margin-right:0;background:var(--ink);color:var(--paper)}
+.loop li:last-child::after{content:"↺ back to start";right:auto;left:14px;top:auto;bottom:-26px;transform:none;font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted);white-space:nowrap}
+.loop b{display:block;font-family:var(--serif);font-weight:400;font-size:20px}
+.loop span{font-size:14px;opacity:.85;line-height:1.4;display:block}
+.loopwrap{padding-bottom:28px}
+
+/* goal selector */
+.selector{display:grid;grid-template-columns:260px 1fr;gap:0;border:1.5px solid var(--ink);background:var(--white)}
+[role=tablist]{display:flex;flex-direction:column;border-right:1.5px solid var(--ink);background:var(--paper2)}
+[role=tab]{font:inherit;text-align:left;padding:18px 20px;border:0;border-bottom:1px solid var(--line);background:transparent;cursor:pointer;color:var(--ink);min-height:56px}
+[role=tab]:last-child{border-bottom:0}
+[role=tab] small{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-top:2px}
+[role=tab][aria-selected=true]{background:var(--ink);color:var(--paper);font-weight:600}
+[role=tab][aria-selected=true] small{color:#c9c8bf;font-weight:400}
+[role=tab]:focus-visible{outline-offset:-4px}
+.panel{padding:32px 34px}
+.panel[hidden]{display:none}
+.panel h3{font-family:var(--serif);font-weight:400;font-size:28px;margin-bottom:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px 34px;margin-top:22px}
+.k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--limeDeep);margin:0 0 6px}
+.panel ul,.card ul{margin:0;padding-left:20px}
+.panel li{margin-bottom:6px}
+.caveat{background:var(--paper2);border-left:5px solid var(--lime);padding:16px 18px}
+.printOnly{display:none}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:64px 1fr;gap:6px 24px;padding:28px 0;border-top:1px solid var(--ink);counter-increment:s}
+.steps li:last-child{border-bottom:1px solid var(--ink)}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:44px;line-height:1;color:var(--limeDeep)}
+.steps h3{font-family:var(--serif);font-weight:400;font-size:26px}
+.steps ul{margin:8px 0 0;padding-left:20px}
+.steps li li{display:list-item;border:0;padding:0;margin-bottom:6px;counter-increment:none;grid-template-columns:none}
+.steps li li::before{content:none}
+
+/* roles */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1.5px solid var(--ink);padding:26px 24px;background:var(--white)}
+.card.mid{background:var(--lime)}
+.card.vb{background:var(--paper2)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:25px}
+.card li{margin-bottom:6px}
+.note{margin-top:22px;font-weight:600}
+
+/* guardrails */
+.guard{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1.5px solid var(--ink)}
+.guard div{padding:22px 24px 22px 0;border-bottom:1px solid var(--line)}
+.guard div:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
+.guard h3{font-size:17px}
+.guard p{margin:0;color:var(--ink2);font-size:16px}
+
+/* copy */
+.copybox{border:1.5px solid var(--ink);background:var(--white)}
+.copybar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1.5px solid var(--ink);background:var(--paper2)}
+.copybar .tabs{display:flex;gap:8px;flex-wrap:wrap}
+.copybar [role=tab]{border:1.5px solid var(--ink);border-radius:999px;padding:9px 16px;min-height:44px;border-bottom:1.5px solid var(--ink)}
+.copybtn{background:var(--lime);color:var(--ink);border-color:var(--ink)}
+.copytext{padding:28px 30px;white-space:pre-wrap;font-family:var(--serif);font-size:18px;line-height:1.6;max-height:none;overflow-wrap:anywhere}
+.copytext:focus-visible{outline-offset:-4px}
+.status{min-height:1.6em;font-size:14px;color:var(--limeDeep);margin:10px 2px 0;font-weight:600}
+
+/* pilot */
+.pilot{background:var(--ink);color:#ecebe4;border-bottom:0}
+.pilot h2{color:#fff}
+.pilot .eyebrow{color:var(--lime)}
+.check{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 32px}
+.check li{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid #3a3f46}
+.check li::before{content:"";flex:0 0 18px;height:18px;margin-top:5px;border:2px solid var(--lime);border-radius:3px}
+.check b{color:#fff}
+.check span{display:block;color:#bdbcb3;font-size:15px}
+.pilot .fine{color:#bdbcb3;max-width:42em}
+
+footer{padding:22px 0 34px;font-size:13px;color:var(--muted);background:var(--paper)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* responsive */
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;padding:48px 0 56px;gap:32px}
+  .engines{grid-template-columns:1fr 1fr}
+  .engines li:nth-child(2){border-right:0}
+  .engines li:nth-child(-n+2){border-bottom:1.5px solid var(--ink)}
+  .selector{grid-template-columns:1fr}
+  [role=tablist].goals{flex-direction:row;border-right:0;border-bottom:1.5px solid var(--ink);overflow:visible;flex-wrap:wrap}
+  .goals [role=tab]{flex:1 1 180px;border-bottom:0;border-right:1px solid var(--line)}
+  .roles{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  section{padding:56px 0}
+  .engines{grid-template-columns:1fr}
+  .engines li,.engines li:nth-child(2){border-right:0;border-bottom:1.5px solid var(--ink)}
+  .engines li:last-child{border-bottom:0}
+  .loop li{flex:1 1 100%;margin-right:0;margin-bottom:22px}
+  .loop li::after{content:"↓";right:auto;left:50%;top:auto;bottom:-27px;transform:translateX(-50%)}
+  .loop li:last-child::after{content:"↺ back to start";left:14px;transform:none}
+  .grid2,.guard,.check{grid-template-columns:1fr}
+  .guard div:nth-child(even){padding-left:0;border-left:0}
+  .panel{padding:24px 20px}
+  .steps li{grid-template-columns:1fr}
+  .steps li::before{font-size:34px}
+  .copytext{padding:20px 18px;font-size:17px}
+  .goals [role=tab]{flex:1 1 100%;border-right:0;border-bottom:1px solid var(--line)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+
+/* print */
+@media print{
+  @page{margin:16mm}
+  body{background:#fff;color:#000;font-size:11.5pt}
+  .dark,.pilot{background:#fff!important;color:#000!important}
+  .pilot h2,.check b{color:#000}.check span,.pilot .fine{color:#333}
+  .label,.eyebrow,.k{color:#222}
+  .hero h1 em{background:none;text-decoration:underline}
+  .thesis{color:#222}
+  .flow,.actions,.skip,.tablist-ui,[role=tablist],.copybtn,.status,.noprint{display:none!important}
+  .hero{grid-template-columns:1fr;padding:24px 0}
+  section{padding:22px 0;break-inside:auto}
+  .selector{display:block;border:0}
+  .panel[hidden],.printOnly{display:block!important}
+  .panel{padding:0 0 14px;break-inside:avoid;border-bottom:1px solid #999;margin-bottom:12px}
+  .liveGoal{display:none!important}
+  .copybox{border:0}.copybar{display:none}
+  .copytext{padding:0;font-size:11.5pt}
+  .engines li,.loop li,.card,.steps li,.guard div{break-inside:avoid}
+  .engines li.ours,.card.mid{background:#fff;border:3px double #000}
+  .loop li:last-child{background:#fff;color:#000}
+  .check li::before{border-color:#000}.check li{border-color:#999}
+  .tag{border:1px solid #000;background:#fff;color:#000}
+  footer{color:#333}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="dark">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">ViralBrand × Colton Lee</div>
+      <div class="label">Partnership concept / Discussion draft</div>
+    </div>
+    <div class="hero">
+      <div>
+        <h1>Creator trust. Paid reach. <em>Measurable action.</em></h1>
+        <p class="thesis">ViralBrand builds the creator relationships and the content. Colton Lee’s team puts approved content to work through paid acquisition, retargeting and a clear path to conversion, so a creator’s post becomes the beginning of a campaign instead of its limit.</p>
+        <div class="actions">
+          <a class="btn primary" href="#goals">Explore by goal</a>
+          <button class="btn" type="button" id="printBtn">Print / save PDF</button>
+        </div>
+      </div>
+      <svg class="flow" viewBox="0 0 560 400" role="img" aria-labelledby="flowT flowD">
+        <title id="flowT">Content to conversion flow</title>
+        <desc id="flowD">Creator content with cleared rights goes into paid reach, then reaches a measured action. Interested people are reconnected with, and results feed back into the next round.</desc>
+        <rect x="1" y="1" width="558" height="398" fill="none" stroke="#2c3036"/>
+        <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#9a9a92" letter-spacing="1">
+          <text x="24" y="34">CONTENT</text><text x="204" y="34">REACH</text><text x="396" y="34">ACTION</text>
+        </g>
+        <!-- creators -->
+        <g>
+          <circle cx="62" cy="110" r="22" fill="none" stroke="#ecebe4" stroke-width="2"/>
+          <circle cx="62" cy="103" r="7" fill="#ecebe4"/><path d="M48 124c3-10 25-10 28 0" fill="#ecebe4"/>
+          <circle cx="62" cy="200" r="22" fill="none" stroke="#ecebe4" stroke-width="2"/>
+          <circle cx="62" cy="193" r="7" fill="#ecebe4"/><path d="M48 214c3-10 25-10 28 0" fill="#ecebe4"/>
+          <circle cx="62" cy="290" r="22" fill="none" stroke="#ecebe4" stroke-width="2"/>
+          <circle cx="62" cy="283" r="7" fill="#ecebe4"/><path d="M48 304c3-10 25-10 28 0" fill="#ecebe4"/>
+        </g>
+        <g fill="none" stroke="#c8f53c" stroke-width="2" class="dash">
+          <path d="M88 110C130 110 140 190 190 200"/>
+          <path d="M88 200H190"/>
+          <path d="M88 290C130 290 140 210 190 200"/>
+        </g>
+        <!-- rights gate -->
+        <g>
+          <rect x="120" y="150" width="0" height="0"/>
+        </g>
+        <!-- paid hub -->
+        <g>
+          <circle cx="260" cy="200" r="66" fill="#c8f53c"/>
+          <circle cx="260" cy="200" r="82" fill="none" stroke="#c8f53c" stroke-width="1.5" opacity=".5"/>
+          <circle cx="260" cy="200" r="98" fill="none" stroke="#c8f53c" stroke-width="1" opacity=".3"/>
+          <text x="260" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#101214">Paid</text>
+          <text x="260" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#101214">reach</text>
+        </g>
+        <g fill="none" stroke="#c8f53c" stroke-width="2" class="dash">
+          <path d="M330 200H400"/>
+        </g>
+        <path d="M396 192l12 8-12 8z" fill="#c8f53c"/>
+        <!-- destination -->
+        <g>
+          <rect x="412" y="150" width="122" height="100" fill="none" stroke="#ecebe4" stroke-width="2"/>
+          <path d="M432 224l22-22 16 14 28-34" fill="none" stroke="#c8f53c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="473" y="244" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#ecebe4">measured</text>
+        </g>
+        <!-- feedback loop -->
+        <path d="M473 252V340H260V300" fill="none" stroke="#ecebe4" stroke-width="1.5" stroke-dasharray="3 6"/>
+        <path d="M252 306l8-10 8 10z" fill="#ecebe4"/>
+        <text x="366" y="332" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#9a9a92">reconnect + refine</text>
+        <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#9a9a92">
+          <text x="24" y="352">Approved creator content</text>
+          <text x="24" y="372">+ cleared paid-use rights</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="engines" aria-labelledby="enginesH">
+  <div class="wrap">
+    <p class="eyebrow">Where this fits</p>
+    <h2 id="enginesH">Four engines. Amplification is the one we would run.</h2>
+    <p class="lede">Amplification gives approved content a larger, deliberately managed distribution system. It can create new demand as well as convert existing interest; it is not limited to bottom-of-funnel retargeting.</p>
+    <ol class="engines">
+      <li><span class="n">01</span><h3>Outreach</h3><p>Mass outreach creates the opportunity.</p></li>
+      <li><span class="n">02</span><h3>Activation</h3><p>Organic activations generate voices and content.</p></li>
+      <li><span class="n">03</span><h3>Partnerships</h3><p>Paid partnerships secure specific talent and deliverables.</p></li>
+      <li class="ours"><span class="tag">Our proposed role</span><br><span class="n">04</span><h3>Amplification</h3><p>Approved content gets paid distribution, managed and measured.</p></li>
+    </ol>
+    <div class="loopwrap">
+      <p class="loopTitle">The campaign loop</p>
+      <ol class="loop">
+        <li><b>Creators &amp; content</b><span>Sourced and made by ViralBrand’s network.</span></li>
+        <li><b>Rights</b><span>Explicit paid-use permission.</span></li>
+        <li><b>Paid acquisition</b><span>Test content to reach new people.</span></li>
+        <li><b>Reconnect</b><span>Follow up with interested non-buyers.</span></li>
+        <li><b>Measure &amp; refine</b><span>Evidence decides where budget goes next.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="goals" aria-labelledby="goalsH">
+  <div class="wrap">
+    <p class="eyebrow">Match the plan to the goal</p>
+    <h2 id="goalsH">Same content engine, different definition of success.</h2>
+    <p class="lede">Every campaign starts with a clear goal. Choose one to see the objective, what to measure, where people should land, and what the numbers can and cannot tell you.</p>
+    <div class="selector">
+      <div role="tablist" class="goals" aria-label="Campaign goal">
+        <button role="tab" type="button" id="tab-ecommerce" aria-controls="panel-ecommerce" aria-selected="true" data-goal="ecommerce">Ecommerce<small>Sales and new customers</small></button>
+        <button role="tab" type="button" id="tab-leads" aria-controls="panel-leads" aria-selected="false" tabindex="-1" data-goal="leads">Lead generation<small>Qualified enquiries</small></button>
+        <button role="tab" type="button" id="tab-entertainment" aria-controls="panel-entertainment" aria-selected="false" tabindex="-1" data-goal="entertainment">Entertainment / subscribers<small>Subscribers, registrations, tickets</small></button>
+      </div>
+      <div id="goalPanels">
+        <div class="panel" role="tabpanel" id="panel-ecommerce" aria-labelledby="tab-ecommerce" tabindex="0" data-goal="ecommerce">
+          <h3>Ecommerce</h3>
+          <p class="k">Objective</p>
+          <p data-f="objective" data-required>Acquire new customers at an economic cost, using approved creator content, not simply buy views.</p>
+          <div class="grid2">
+            <div><p class="k">What we track</p><ul data-f="metrics" data-required>
+              <li>New-customer orders and share of orders</li>
+              <li>Cost to acquire a new customer</li>
+              <li>Contribution economics after media and creator costs</li>
+              <li>Platform reporting reconciled with actual store sales</li>
+            </ul></div>
+            <div><p class="k">Conversion destination</p><p data-f="dest" data-required>Product page, collection or offer page into checkout, reviewed for friction before spend scales.</p></div>
+          </div>
+          <div class="caveat" style="margin-top:24px"><p class="k">Measurement caveats</p><p data-f="caveat" data-required style="margin:0">High reported ROAS alone does not prove retargeting or retention purchases would not have happened anyway. Existing buyers are reported as retention, not new-customer acquisition. Creator commissions apply only where the economics suit.</p></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-leads" aria-labelledby="tab-leads" tabindex="0" data-goal="leads" hidden>
+          <h3>Lead generation</h3>
+          <p class="k">Objective</p>
+          <p data-f="objective" data-required>Generate qualified leads that turn into real conversations and customers, not just a high volume of form fills.</p>
+          <div class="grid2">
+            <div><p class="k">What we track</p><ul data-f="metrics" data-required>
+              <li>Lead quality: qualified, contacted and booked rates</li>
+              <li>CRM outcomes such as opportunities and closed business</li>
+              <li>Cost per qualified lead, not cost per form</li>
+              <li>Feedback from the sales team on lead fit</li>
+            </ul></div>
+            <div><p class="k">Conversion destination</p><p data-f="dest" data-required>Lead form, booking page or enquiry path that passes source information into the client’s CRM.</p></div>
+          </div>
+          <div class="caveat" style="margin-top:24px"><p class="k">Measurement caveats</p><p data-f="caveat" data-required style="margin:0">Raw form submissions are not the result. Lead quality depends on CRM follow-up, which can lag the ad data, so judge the campaign on CRM outcomes once they are available. Fixed or hybrid creator fees usually fit better than sales commission.</p></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-entertainment" aria-labelledby="tab-entertainment" tabindex="0" data-goal="entertainment" hidden>
+          <h3>Entertainment / subscribers</h3>
+          <p class="k">Objective</p>
+          <p data-f="objective" data-required>Agree the desired action first: subscriptions, registrations, ticket purchases, viewing or another outcome.</p>
+          <div class="grid2">
+            <div><p class="k">What we track</p><ul data-f="metrics" data-required>
+              <li><b>Measured:</b> verified subscribers and ticket sales</li>
+              <li><b>Platform-attributed:</b> results the ad platform reports</li>
+              <li><b>Directional:</b> clicks, views and watch time</li>
+              <li>Formal lift studies, separately scoped where feasible</li>
+            </ul></div>
+            <div><p class="k">Conversion destination</p><p data-f="dest" data-required>YouTube channel, ticketing site or registration page, chosen to match the agreed action.</p></div>
+          </div>
+          <div class="caveat" style="margin-top:24px"><p class="k">Measurement caveats</p><p data-f="caveat" data-required style="margin:0">A click to YouTube or a ticketing site is not automatically a verified subscription or sale. Source-level Meta subscription attribution is not guaranteed, so measured, platform-attributed and directional results are always labelled separately. Fixed creator fees often suit these campaigns better than commission.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach" aria-labelledby="approachH">
+  <div class="wrap">
+    <p class="eyebrow">Operating approach</p>
+    <h2 id="approachH">Five steps, in plain English.</h2>
+    <ol class="steps">
+      <li><div>
+        <h3>Set up creator deals that can lead to performance</h3>
+        <p>Where it suits the brand, offer an affiliate or commission arrangement tied to agreed, trackable sales.</p>
+        <ul>
+          <li>Commission is not universal. Use a fixed fee, commission, or a combination, depending on the deliverables and the brand’s economics.</li>
+          <li>Clarify before launch whether paid-ad sales qualify for commission, and set rules so no sale is paid twice.</li>
+          <li>Subscriber or awareness campaigns often suit fixed fees better than sales commission.</li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3>Secure the rights to use content as ads</h3>
+        <p>Permission to post organically is not permission to advertise with someone’s video or likeness.</p>
+        <ul>
+          <li>Agree platforms, term, territory, editing, music and third-party rights, and any creator-account authorization.</li>
+          <li>When authorized, ads can run from the brand’s handle or from a creator’s handle.</li>
+          <li>Organic winners are good candidates, not a prerequisite. Paid tests decide what works as an ad.</li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3>Use paid acquisition to reach new customers</h3>
+        <p>Build around the real objective and the conversion signals available.</p>
+        <ul>
+          <li>Use a simple account structure, a meaningful variety of creative, sensible customer exclusions, and agreed spend and efficiency limits.</li>
+          <li>Test the source videos and, within the agreed scope, hooks, cutdowns, copy and calls to action.</li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3>Reconnect with the right people, and keep retargeting separate from retention</h3>
+        <ul>
+          <li><b>Retargeting:</b> eligible interested non-buyers who visited, engaged or took a meaningful step.</li>
+          <li><b>Retention:</b> existing buyers, treated separately and never counted as new-customer acquisition.</li>
+          <li>No automatic retention budget. Each budget has to earn its place.</li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3>Make the conversion path and measurement match the promise</h3>
+        <ul>
+          <li>Review the offer, landing page, checkout or signup path, and tracking before scaling, and recommend fixes.</li>
+          <li>Separate measured conversions, platform-attributed results and directional indicators.</li>
+          <li>Landing-page builds, substantial funnel work and lifecycle email are separate unless expressly included.</li>
+        </ul>
+      </div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="roles" aria-labelledby="rolesH">
+  <div class="wrap">
+    <p class="eyebrow">Who does what</p>
+    <h2 id="rolesH">A proposed split of responsibility.</h2>
+    <p class="lede">This is a starting point for discussion. The actual scope is agreed together for each campaign.</p>
+    <div class="roles">
+      <div class="card vb">
+        <h3>ViralBrand</h3>
+        <ul>
+          <li>Creator contracts and compensation</li>
+          <li>Rights clearance</li>
+          <li>Creator sourcing and relationships</li>
+          <li>Primary account lead for the client</li>
+        </ul>
+      </div>
+      <div class="card mid">
+        <h3>Colton Lee’s team</h3>
+        <ul>
+          <li>Paid setup and strategy</li>
+          <li>Media buying</li>
+          <li>Testing and optimization</li>
+          <li>Paid-performance reporting</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Shared</h3>
+        <ul>
+          <li>Approvals</li>
+          <li>Campaign objective</li>
+          <li>Creative scope, including any adaptation</li>
+          <li>Tracking implementation</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Both sides agree the actual scope before work begins.</p>
+  </div>
+</section>
+
+<section id="guardrails" aria-labelledby="guardH">
+  <div class="wrap">
+    <p class="eyebrow">Scope guardrails</p>
+    <h2 id="guardH">Start small and keep the pieces separate.</h2>
+    <div class="guard">
+      <div><h3>One campaign, one primary channel</h3><p>Start with one defined campaign. Add channels only when the objective, budget and capacity justify them.</p></div>
+      <div><h3>Extra channels are scoped separately</h3><p>Each additional channel gets its own scope rather than being assumed.</p></div>
+      <div><h3>Separate cost lines</h3><p>Keep media spend, creator compensation, usage fees, agency management, and production visible as separate budget lines.</p></div>
+      <div><h3>Bigger builds are separate</h3><p>Major editing, funnels and landing-page builds sit outside the base scope unless expressly included.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="copy" aria-labelledby="copyH">
+  <div class="wrap">
+    <p class="eyebrow">Copy-ready</p>
+    <h2 id="copyH">Words you can paste into a website or proposal.</h2>
+    <p class="lede">Choose the short version for a process page, or the fuller version for a proposal, then copy it.</p>
+    <div class="copybox">
+      <div class="copybar">
+        <div class="tabs" role="tablist" aria-label="Copy version">
+          <button role="tab" type="button" id="ctab-short" aria-controls="copyText" aria-selected="true" data-copy="short">Short website copy</button>
+          <button role="tab" type="button" id="ctab-full" aria-controls="copyText" aria-selected="false" tabindex="-1" data-copy="full">Fuller proposal copy</button>
+        </div>
+        <button class="btn copybtn" type="button" id="copyBtn">Copy text</button>
+      </div>
+      <div class="copytext" id="copyText" role="tabpanel" aria-labelledby="ctab-short" tabindex="0" data-required></div>
+    </div>
+    <p class="status" id="copyStatus" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<section id="next" class="pilot dark" aria-labelledby="nextH">
+  <div class="wrap">
+    <p class="eyebrow">Suggested next step</p>
+    <h2 id="nextH">Scope one pilot together.</h2>
+    <p class="lede" style="color:#cfcec6">A short pilot brief is enough to start the conversation. It would cover:</p>
+    <ul class="check">
+      <li><div><b>Client goal</b><span>Sales, qualified leads, subscribers or awareness.</span></div></li>
+      <li><div><b>Primary channel</b><span>One channel to begin with.</span></div></li>
+      <li><div><b>Dates</b><span>Test window and key milestones.</span></div></li>
+      <li><div><b>Budget</b><span>Media, creator and management lines, kept separate.</span></div></li>
+      <li><div><b>Assets</b><span>Available creator content and its usage rights.</span></div></li>
+      <li><div><b>Tracking</b><span>Conversion path and how results are measured.</span></div></li>
+      <li><div><b>Approvals</b><span>Who signs off on creative, spend and scope.</span></div></li>
+    </ul>
+    <p class="fine">Rates, targets, and deliverables are agreed in a separate campaign scope. Forecasts are planning estimates, not guarantees.</p>
+    <button class="btn noprint" type="button" id="printBtn2">Print / save PDF</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Discussion draft, not agreed commercial terms.</span>
+    <span>Prepared by Colton Lee for ViralBrand</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var COPY = {
+    short:
+"Turn creator trust into action.\n\n" +
+"The creator’s post is the beginning, not the limit. We put paid distribution behind approved creator content to reach new potential customers and reconnect with people who have already shown interest.\n\n" +
+"Every campaign starts with a clear goal: sales, qualified leads, subscribers, or awareness. We match the content, channel, audience, and destination to that goal, then test and refine the approach based on results.\n\n" +
+"• Activate: Align creator incentives, deliverables, and paid-use permissions. Where appropriate, affiliate commissions give creators a stake in eligible sales.\n" +
+"• Acquire: Test authentic creator content in paid campaigns designed to reach new customers or audiences.\n" +
+"• Reconnect: Follow up with eligible engaged prospects, and use a separate retention approach for existing customers where justified.\n" +
+"• Improve: Evaluate creative, conversion paths, and performance, then direct budget toward the opportunities supported by the evidence.\n\n" +
+"You get more than additional views: a managed process for turning creator content into measurable action, plus learnings that inform the next campaign. Channels, deliverables, fees, media budgets, and measurement methods are agreed in each campaign plan. Results vary; forecasts are estimates, not guarantees.",
+    full:
+"Turning influencer content into measurable growth\n\n" +
+"The idea\n" +
+"ViralBrand’s team builds the creator relationships and generates the content and social proof. Our team puts that content to work through paid acquisition, retargeting, and a clear path to conversion. Instead of relying only on the audience an influencer already has, we can distribute their content to new potential customers and reconnect with people who have shown interest.\n\n" +
+"Where it makes economic sense, creator commission deals can be combined with paid distribution. Not every creator or campaign needs the same compensation structure.\n\n" +
+"1. Build creator partnerships with a path to performance\n" +
+"For suitable brands, offer creators an affiliate or commission arrangement tied to agreed, trackable sales. Depending on the creator and deliverables, that may be commission-only or a fixed fee plus commission. Commission is not universal, and it only works if the economics suit the brand. Before launch, clarify whether paid-ad sales qualify, how links and codes interact with paid attribution, and how duplicate payouts are avoided. Subscriber-growth or awareness campaigns may suit fixed creator fees better.\n\n" +
+"2. Secure the content and permissions needed for ads\n" +
+"Organic posting permission is not automatically permission to advertise with someone’s video or likeness. Agree platforms, term, territory, editing, music and other third-party rights, and any creator-account authorization. Approved content can run from the brand’s handle or, where authorized and supported, a creator’s handle. Organic winners are good candidates but not a prerequisite; paid testing determines what works as an ad.\n\n" +
+"3. Use paid acquisition to reach new customers\n" +
+"Build campaigns around the client’s actual objective and the conversion signals available. Use a simple account structure, meaningful creative variety, appropriate customer exclusions, and agreed spending and efficiency limits. Test the source videos and, within the agreed creative scope, different hooks, cutdowns, copy, offers, or calls to action.\n\n" +
+"4. Reconnect with interested prospects, and treat existing customers separately\n" +
+"Retarget eligible non-buyers who have visited, engaged, or taken a meaningful step without converting. Treat existing buyers separately as retention; it should not be credited as new-customer acquisition, and retention budgets are not automatic. Retargeting and retention budgets must earn their place.\n\n" +
+"5. Make the destination and measurement match the promise\n" +
+"Review the offer, landing page, checkout or signup path, and tracking before scaling. Landing-page builds, substantial funnel work, and lifecycle email are separate unless expressly included. For ecommerce, reconcile platform reporting with actual sales and new-customer outcomes. For lead generation, judge quality and CRM outcomes rather than raw form fills. For entertainment, a click to YouTube or a ticketing site is not automatically a verified subscription or sale, and we clearly distinguish measured, platform-attributed, and directional results.\n\n" +
+"Proposed division of responsibility\n" +
+"ViralBrand: creator contracts and compensation, rights clearance, and primary account lead. Colton Lee’s team: paid setup, strategy, buying, testing, and reporting. Shared: approvals, objective, and creative scope. The actual scope is agreed together.\n\n" +
+"Scope\n" +
+"Start with one defined campaign and one primary paid channel. Additional channels are scoped separately. Media spend, creator compensation, usage fees, agency management, and production are kept separate in the budget. Major editing, funnels, and landing-page builds are separate.\n\n" +
+"This is a discussion draft, not agreed commercial terms. No pricing or performance guarantees are established, and forecasts are estimates, not guarantees."
+  };
+
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+
+  /* generic tab behaviour */
+  function wireTabs(list, onSelect){
+    var tabs = $$('[role=tab]', list);
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ onSelect(t); });
+      t.addEventListener('keydown', function(e){
+        var n = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = tabs[(i+1)%tabs.length];
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = tabs[(i-1+tabs.length)%tabs.length];
+        else if (e.key === 'Home') n = tabs[0];
+        else if (e.key === 'End') n = tabs[tabs.length-1];
+        if (n){ e.preventDefault(); n.focus(); onSelect(n); }
+      });
+    });
+    return tabs;
+  }
+  function mark(tabs, active){
+    tabs.forEach(function(t){
+      var on = t === active;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+  }
+
+  /* goals */
+  var goalTabs = wireTabs($('.goals'), function(t){ setGoal(t.getAttribute('data-goal')); });
+  function setGoal(g){
+    goalTabs.forEach(function(t){ if (t.getAttribute('data-goal') === g) mark(goalTabs, t); });
+    $$('#goalPanels .panel').forEach(function(p){ p.hidden = p.getAttribute('data-goal') !== g; });
+  }
+
+  /* copy */
+  var copyTabs = wireTabs($('[aria-label="Copy version"]'), function(t){ setCopy(t.getAttribute('data-copy')); });
+  var copyText = $('#copyText'), status = $('#copyStatus'), current = 'short';
+  function setCopy(k){
+    current = k;
+    copyTabs.forEach(function(t){ if (t.getAttribute('data-copy') === k){ mark(copyTabs, t); copyText.setAttribute('aria-labelledby', t.id); } });
+    copyText.textContent = COPY[k];
+    status.textContent = '';
+  }
+  function selectText(){
+    try {
+      var r = document.createRange(); r.selectNodeContents(copyText);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      return true;
+    } catch(e){ return false; }
+  }
+  function legacyCopy(){
+    var ta = document.createElement('textarea');
+    ta.value = COPY[current]; ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function fail(){
+    selectText();
+    status.textContent = 'Copying is blocked here. The text is selected: press Ctrl+C (or ⌘C) to copy it.';
+  }
+  function doCopy(){
+    var done = function(){ status.textContent = (current === 'short' ? 'Short website copy' : 'Fuller proposal copy') + ' copied.'; };
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext !== false){
+      navigator.clipboard.writeText(COPY[current]).then(done, function(){ legacyCopy() ? done() : fail(); });
+    } else { legacyCopy() ? done() : fail(); }
+  }
+  $('#copyBtn').addEventListener('click', doCopy);
+
+  /* print */
+  function doPrint(){ window.print(); }
+  $('#printBtn').addEventListener('click', doPrint);
+  $('#printBtn2').addEventListener('click', doPrint);
+
+  function reset(){ setGoal('ecommerce'); setCopy('short'); }
+  reset();
+
+  /* self test */
+  window.runArtifactTests = function(){
+    var checks = [];
+    function add(name, pass, detail){ checks.push({name:name, pass:!!pass, detail: detail||''}); }
+    var vis = function(el){ return el && !el.hidden && el.offsetParent !== null; };
+    var txt = function(el){ return (el && el.textContent || '').replace(/\s+/g,' ').trim(); };
+    var expect = {
+      ecommerce: ['new customer','checkout','roas'],
+      leads: ['qualified','crm','form'],
+      entertainment: ['verified subscri','youtube','source-level meta']
+    };
+    var seen = {};
+    Object.keys(expect).forEach(function(g){
+      $('#tab-'+g).click();
+      var shown = $$('#goalPanels .panel').filter(vis);
+      add('goal '+g+': exactly one panel visible', shown.length === 1 && shown[0].getAttribute('data-goal') === g);
+      add('goal '+g+': aria-selected set', $('#tab-'+g).getAttribute('aria-selected') === 'true' && $$('.goals [role=tab][aria-selected=true]').length === 1);
+      var t = txt(shown[0]).toLowerCase();
+      expect[g].forEach(function(w){ add('goal '+g+': contains "'+w+'"', t.indexOf(w) > -1); });
+      ['objective','metrics','dest','caveat'].forEach(function(f){
+        add('goal '+g+': '+f+' non-empty', txt($('[data-f='+f+']', shown[0])).length > 20);
+      });
+      seen[g] = t;
+    });
+    add('goal panels differ', seen.ecommerce !== seen.leads && seen.leads !== seen.entertainment && seen.ecommerce !== seen.entertainment);
+    $('#tab-ecommerce').click();
+
+    $('#ctab-full').click();
+    var full = copyText.textContent;
+    add('copy full tab selected', $('#ctab-full').getAttribute('aria-selected') === 'true' && $('#ctab-short').getAttribute('aria-selected') === 'false');
+    add('copy full shows fuller text', full === COPY.full && full.length > COPY.short.length);
+    $('#ctab-short').click();
+    add('copy short tab selected', $('#ctab-short').getAttribute('aria-selected') === 'true' && copyText.textContent === COPY.short);
+    $('#ctab-full').click(); reset();
+    add('reset restores ecommerce + short', vis($('#panel-ecommerce')) && !vis($('#panel-leads')) && !vis($('#panel-entertainment')) && copyText.textContent === COPY.short && $('#ctab-short').getAttribute('aria-selected') === 'true');
+    add('copy status cleared on reset', status.textContent === '');
+
+    var blank = $$('[data-required]').filter(function(e){ return txt(e).length === 0; });
+    add('no blank required content', blank.length === 0, blank.length + ' blank');
+    var hs = $$('main section').filter(function(s){ return txt(s).length < 80; });
+    add('every section has content', hs.length === 0);
+
+    var de = document.documentElement;
+    add('no horizontal page overflow', de.scrollWidth <= de.clientWidth + 1, de.scrollWidth + ' vs ' + de.clientWidth);
+    var over = $$('body *').filter(function(e){
+      if (e.closest('svg') || !e.offsetParent) return false;
+      return e.scrollWidth > e.clientWidth + 1 && getComputedStyle(e).overflowX !== 'visible'
+        || e.getBoundingClientRect().right > de.clientWidth + 1;
+    }).map(function(e){ return e.tagName.toLowerCase() + (e.id?'#'+e.id:'') + '.' + (e.className && e.className.baseVal === undefined ? e.className : ''); });
+    add('no clipped or overflowing elements', over.length === 0, over.slice(0,5).join(' | '));
+
+    var html = document.documentElement.outerHTML;
+    add('no external URLs', !/(src|href)=["']https?:/i.test(html));
+    var result = {pass: checks.every(function(c){ return c.pass; }), viewport: de.clientWidth, checks: checks};
+    return result;
+  };
+})();
+</script>
+</body>
+</html>
